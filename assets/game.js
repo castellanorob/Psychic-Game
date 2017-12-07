@@ -22,9 +22,16 @@ document.onkeyup = function() {
 
 		console.log(computerGuess)
 
+// Function for logging and displaying user guesses
+
+// Function for calculating wins and losses
+
 	if (userGuess == computerGuess) {
 		alert("You win!");
 		wins++;
+		remainingGuesses = 10;
+		computerGuess = letters[Math.floor(Math.random()*
+		letters.length)];
 
 	}
 
@@ -34,16 +41,16 @@ document.onkeyup = function() {
 
 	}
 
-	if (remainingGuesses == 0) {
-		alert("You lack clairvoiance");
-		
-	}
-
-// Function for logging and displaying user guesses
-
 // Function for counting down remaining guesses
 
-// Function for calculating wins and losses
+	if (remainingGuesses == 0) {
+		alert("You lack clairvoyance");
+		losses++;
+		remainingGuesses = 9;
+		userGuess = "";
+
+	}
+
 
 // Function displaying wins, losses, letters guessed, remaining guesses in html
 
